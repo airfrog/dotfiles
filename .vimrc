@@ -13,6 +13,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'kien/ctrlp.vim'
 
 " Various Syntax files
@@ -45,6 +46,7 @@ endif
 
 filetype plugin indent on
 syntax enable
+colorscheme Monokai
 
 map <Leader>y "+y
 map <Leader>p "+p
@@ -58,9 +60,10 @@ set statusline=%f\ %h%m%r\ %=%-24([%Y,%{strlen(&fenc)?&fenc:'none'},%{&ff}]%)%-2
 nnoremap <Leader>no :nohl<CR>
 
 " Open the corresponding .C/.T/.h file
+" Thanks to Eli Gwynn for this function
 function! OpenMatching()
     let path=expand("%:h")
-    let pattern=expand("%:t:r").".\*"
+    let pattern="'".expand("%:t:r").".\*'"
     let cur=expand("%:t")
     let cmd="find ".path." -maxdepth 1 -name ".pattern." -and -not -name ".cur
     let result=system(cmd)
