@@ -28,3 +28,4 @@ alias grep='grep --color=auto'
 alias vim='vim -O'
 alias gg="git grep"
 
+alias src="cd $HOME/Documents/Source"
