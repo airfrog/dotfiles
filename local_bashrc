@@ -1,0 +1,26 @@
+# .bashrc
+
+export GOPATH=$HOME/Documents/Source/go
+export EMSDK_PATH=$HOME/Documents/Source/emsdk-portable
+# Golang
+PATH=$PATH:$GOPATH/bin
+
+# Rust
+PATH=$PATH:~/.cargo/bin
+
+# Emscripten
+PATH=$PATH:$EMSDK_PATH/
+PATH=$PATH:$EMSDK_PATH/clang/fastcomp/build_incoming_64/bin
+PATH=$PATH:$EMSDK_PATH/emscripten/incoming
+
+alias src="cd $HOME/Documents/Source"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+
+#eval $(gpg-agent --daemon)
+#export SSH_AUTH_SOCK=/Users/david/.gnupg/S.gpg-agent.ssh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. $HOME/Documents/source/dotfiles/.bashrc
