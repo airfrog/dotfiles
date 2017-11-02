@@ -14,17 +14,24 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 
 " Various Syntax files
+Plugin 'justinmk/vim-syntax-extra'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kana/vim-filetype-haskell'
+Plugin 'tpope/vim-markdown'
+Plugin 'rust-lang/rust.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'fatih/vim-go'
 
 " Python stuff
 Plugin 'hdima/python-syntax'
 Plugin 'hynek/vim-python-pep8-indent'
 
 " C++ stuff
+Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rhysd/vim-clang-format.git'
 
 " All of your Plugins must be added before the following line
@@ -43,10 +50,11 @@ set number
 if version >= 703
     set colorcolumn=80
 endif
+set guifont=Anonymous\ Pro:h12
 
 filetype plugin indent on
 syntax enable
-colorscheme Monokai
+colorscheme Molokai
 
 map <Leader>y "+y
 map <Leader>p "+p
@@ -58,6 +66,10 @@ set laststatus=2
 set statusline=%f\ %h%m%r\ %=%-24([%Y,%{strlen(&fenc)?&fenc:'none'},%{&ff}]%)%-24(C:%-3c\ L:%-11([%l/%L]%)%)%P
 
 nnoremap <Leader>no :nohl<CR>
+
+" Turn on python syntax highlighting for everything
+let python_highlight_all=1
+let python_highlight_space_errors=0
 
 " Open the corresponding .C/.T/.h file
 " Thanks to Eli Gwynn for this function
@@ -89,3 +101,10 @@ nnoremap <Leader>ga :call QFGGrep(GitRoot())<CR>
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 
+" Go syntax options
+let g:go_highlight_functions = 1
+let g:go_highlight_types = 1
+
+" NerdTREE settings
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
