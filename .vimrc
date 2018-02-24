@@ -107,4 +107,8 @@ let g:go_highlight_types = 1
 
 " NerdTREE settings
 map <C-n> :NERDTreeToggle<CR>
+" automatically close the file if NERDTree is the only buffer left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autoopen NERDTree for blank vim
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
