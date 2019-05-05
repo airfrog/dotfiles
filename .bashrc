@@ -22,7 +22,11 @@ prompt_bad_exit() {
 export PROMPT_COMMAND="prompt_bad_exit"
 export PS1='[\u@\h \w$(__git_ps1 " (%s)")]\$ '
 
-alias ls='ls -G'
+if (ls --version | grep -q 'GNU'); then
+    alias ls='ls --color=auto'
+else
+    alias ls='ls -G'
+fi
 
 alias grep='grep --color=auto'
 alias vim='vim -O'

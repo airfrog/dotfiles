@@ -2,6 +2,16 @@
 
 export GOPATH=$HOME/Documents/Source/go
 export EMSDK_PATH=$HOME/Documents/Source/emsdk-portable
+
+# Mac Apps
+PATH=$PATH:/Applications/MacVim.app/Contents/bin
+PATH=$PATH:"/Applications/Racket v7.2/bin"
+
+# GNU Utils
+PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+PATH=/usr/local/opt/binutils/libexec/gnubin:$PATH
+PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
+
 # Golang
 PATH=$PATH:$GOPATH/bin
 
@@ -12,6 +22,9 @@ PATH=$PATH:~/.cargo/bin
 PATH=$PATH:$EMSDK_PATH/
 PATH=$PATH:$EMSDK_PATH/clang/fastcomp/build_incoming_64/bin
 PATH=$PATH:$EMSDK_PATH/emscripten/incoming
+
+# Ruby
+eval "$(rbenv init -)"
 
 alias src="cd $HOME/Documents/Source"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
@@ -26,3 +39,5 @@ export NVM_DIR="$HOME/.nvm"
 . $HOME/Documents/source/dotfiles/.bashrc
 
 alias vim='mvim -O'
+
+

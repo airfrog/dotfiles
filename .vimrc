@@ -16,15 +16,27 @@ Plugin 'tpope/vim-commentary'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'prettier/vim-prettier'
+Plugin 'ludovicchabant/vim-gutentags'
 
 " Various Syntax files
 Plugin 'justinmk/vim-syntax-extra'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kana/vim-filetype-haskell'
 Plugin 'tpope/vim-markdown'
 Plugin 'rust-lang/rust.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'fatih/vim-go'
+Plugin 'bitfyre/vim-indent-html'
+Plugin 'stephpy/vim-yaml'
+Plugin 'file:///Users/david/Documents/Source/vim-settings'
+
+" Autocomplete
+Plugin 'valloric/youcompleteme'
 
 " Python stuff
 Plugin 'hdima/python-syntax'
@@ -50,7 +62,7 @@ set number
 if version >= 703
     set colorcolumn=80
 endif
-set guifont=Anonymous\ Pro:h12
+set guifont=Anonymous\ Pro:h16
 
 filetype plugin indent on
 syntax enable
@@ -65,11 +77,14 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 set laststatus=2
 set statusline=%f\ %h%m%r\ %=%-24([%Y,%{strlen(&fenc)?&fenc:'none'},%{&ff}]%)%-24(C:%-3c\ L:%-11([%l/%L]%)%)%P
 
-nnoremap <Leader>no :nohl<CR>
+"nnoremap <Leader>n :cnext<CR>
+"nnoremap <Leader>p :cprev<CR>
 
 " Turn on python syntax highlighting for everything
 let python_highlight_all=1
 let python_highlight_space_errors=0
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Open the corresponding .C/.T/.h file
 " Thanks to Eli Gwynn for this function
