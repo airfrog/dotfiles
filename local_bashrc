@@ -27,6 +27,11 @@ PATH=$PATH:$EMSDK_PATH/emscripten/incoming
 eval "$(rbenv init -)"
 
 alias src="cd $HOME/Documents/Source"
+alias bc="cd $HOME/Documents/Source/baltimore-corps"
+alias bcb="cd $HOME/Documents/Source/baltimore-corps/hippo-backend && . env/bin/activate"
+alias bcf="cd $HOME/Documents/Source/baltimore-corps/hippo-frontend"
+alias ss="cd $HOME/Documents/Source/slipstitch"
+alias ssp="cd $HOME/Documents/Source/slipstitch/prototype"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 #eval $(gpg-agent --daemon)
@@ -41,3 +46,6 @@ export NVM_DIR="$HOME/.nvm"
 alias vim='mvim -O'
 
 
+
+# added by travis gem
+[ -f /Users/david/.travis/travis.sh ] && source /Users/david/.travis/travis.sh

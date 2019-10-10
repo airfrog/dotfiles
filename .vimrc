@@ -25,6 +25,9 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+"Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kana/vim-filetype-haskell'
 Plugin 'tpope/vim-markdown'
@@ -41,6 +44,9 @@ Plugin 'valloric/youcompleteme'
 " Python stuff
 Plugin 'hdima/python-syntax'
 Plugin 'hynek/vim-python-pep8-indent'
+
+" Javascript (etc.) Stuff
+Plugin 'dgraham/vim-eslint'
 
 " C++ stuff
 Plugin 'octol/vim-cpp-enhanced-highlight'
